@@ -1,9 +1,12 @@
-<h1>카카오톡 단어 분석 to JSON (2024.07)</h1>
-<h3>카카오톡 대화 내용을 분석하여 가장 많이 사용된 단어를 추출하고, 이를 JSON 파일로 확인할수있다.</h3>
+<h1>카카오톡 단어 분석(2024.07)</h1>
+<h3>카카오톡 대화 내용을 분석하여 가장 많이 사용된 단어를 추출하고, 시간대별로 카톡 기록을 분석하여 표로 볼수있고 , JSON 파일로 확인할수있다.</h3>
 
 ![kakao_screenshot1720682479991](https://github.com/asa9874/Kakao_Word_Analysis/assets/84450816/496f1976-0484-45b1-bfc7-8e8e78198077)
 
 =>
+
+![image](https://github.com/user-attachments/assets/9962751c-587d-4e0d-ab59-461fccb00aa9)
+
 <pre><code>"name": "단호한 포돌이",
     "data": {
         "사진": 4440,
@@ -12,8 +15,6 @@
         "내": 1843,
         "너": 1670,
         "난": 1512,</code></pre>
-
-
 
         
 <h1>1.사용법</h1>
@@ -62,13 +63,10 @@ JSON 파일을 만들기 위해 JSON 모듈을 사용하였다.
 <pre><code>import json</code></pre>
 
 
-
-
-
-
-
-
-
-
+<h2>2-3.matplotlib</h2>
+https://matplotlib.org/</p>
+파이썬에서 데이터 시각화를 위한 라이브러리 matplotlib을 사용하였다.
+<pre><code>pip install matplotlib
+import matplotlib</code></pre>
 
 
