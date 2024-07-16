@@ -60,10 +60,7 @@ with open(file_path, 'r', encoding='utf-8') as file:
         except:
             print(str(cnt)+"줄 오류")
             continue
-        
-        
-        
-        
+
         #if(cnt==50000):break #줄수 제한할때사용
         print(cnt)          #몇번째 줄인지 출력
         
@@ -90,7 +87,6 @@ for human_name in human:
         json.dump(data, f, ensure_ascii=False, indent=4)
 data={}
 for human_name in human:
-    #sorted_items_time = sorted(human_talktime[human_name].items(), key=lambda x: x[1], reverse=True)
     data[human_name]={name: value for name, value in human_talktime[human_name].items()}
 
 print(data)
