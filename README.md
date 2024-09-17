@@ -34,8 +34,13 @@
 <h3>1-2-1.git clone으로 레포지터리를 복사한다.</h3>
 <pre><code>$ git clone https://github.com/asa9874/Kakao_Word_Analysis</code></pre>
 
+<h3>1-2-2.한국어 명사분류(Konlpy)</h2>
+<h3>pip으로 konlpy,matplotlib를 설치한다.</h3>
+<pre><code>$ python3 -m pip install konlpy 
+$ python3 -m pip install matplotlib</code></pre>
 
-<h3>1-2-2.내보내기한 kakao파일을 다음처럼 main.py와 같은 폴더안에 구성한다.</h3>
+
+<h3>1-2-3.내보내기한 kakao파일을 다음처럼 main.py와 같은 폴더안에 구성한다.</h3>
 
 ![image](https://github.com/asa9874/Kakao_Word_Analysis/assets/84450816/5b4d30dc-1d95-4158-a7f4-2e3e0b1021ca)
 
@@ -44,29 +49,5 @@
 ![image](https://github.com/asa9874/Kakao_Word_Analysis/assets/84450816/b7c9cecd-e942-4fd1-8b8e-6e46dea230a9)
 
 
-
-<h1>2.사용한것</h1>
-
-
-<h2>2-1.한국어 명사분류(Konlpy)</h2>
-https://konlpy.org/ko/latest/morph/ </p>
-한국어 Konlpy의 nouns 메소드를 통해 명사를 추출하였다.</p>
-<pre><code>$ python3 -m pip install konlpy </code></pre>
-<pre><code>import konlpy
-from konlpy.tag import Okt</code></pre>
-
-
-
-
-<h2>2-2.JSON</h2>
-JSON 파일을 만들기 위해 JSON 모듈을 사용하였다.
-<pre><code>import json</code></pre>
-
-
-<h2>2-3.matplotlib</h2>
-https://matplotlib.org/</p>
-파이썬에서 데이터 시각화를 위한 라이브러리 matplotlib을 사용하였다.
-<pre><code>pip install matplotlib
-import matplotlib</code></pre>
 
 
