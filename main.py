@@ -2,6 +2,12 @@ import konlpy
 from konlpy.tag import Okt
 import json
 from draw import * 
+import pandas as pd 
+import os
+import nltk
+from nltk.stem import WordNetLemmatizer
+import tensorflow as tf
+from nltk.tokenize import word_tokenize
 
 okt = Okt()
 
@@ -44,6 +50,29 @@ def add_statistics(talk_time,name,kor_list):
             kor_dics[name][voca]=1
 
 
+#정제
+def Cleaning(txt):
+    tokens=okt.morphs(txt.strip())
+    # 현재 스크립트가 위치한 디렉토리 경로 가져오기
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+
+    # stopwords.xlsx의 절대 경로 생성
+    file_path = os.path.join(script_dir, 'stopwords.xlsx')
+
+    # 엑셀 파일 읽기
+    df = pd.read_excel(file_path, header=None)
+
+    # 첫 번째 열에 있는 데이터를 set으로 변환
+    stopwords_set = set(df[0].dropna().values)
+    #특수문자 제거 
+    tokens = [token for token in tokens if token.isalnum()] 
+    #필요없는거 제거(선택)
+    #tokens = [word for word in tokens if not word in stopwords_set]
+    print(tokens)
+    return tokens
+    
+
+
 
 # 파일 열기 (읽기 모드로)
 with open(file_path, 'r', encoding='utf-8') as file:
@@ -55,13 +84,14 @@ with open(file_path, 'r', encoding='utf-8') as file:
             #라인분리,형태소분리,통계추가
             talk_time,name,txt=split_line(line)
             if(len(txt)>=2000):continue
-            kor_list=okt.nouns(txt.strip())
+            if(txt == " <사진 읽지 않음>"):continue
+            kor_list=Cleaning(txt)#정제
             add_statistics(talk_time,name,kor_list)
         except:
             print(str(cnt)+"줄 오류")
             continue
 
-        #if(cnt==50000):break #줄수 제한할때사용
+        #if(cnt==100):break #줄수 제한할때사용
         print(cnt)          #몇번째 줄인지 출력
         
 
